@@ -23,7 +23,7 @@
 """Setup and Install Script."""
 
 
-from distutils.core import setup
+from setuptools import find_packages, setup
 
 
 setup(
@@ -34,8 +34,8 @@ setup(
     license="GNU (Version 3)",
     author="Ayers Group",
     author_email="ayers@mcmaster.ca",
-    package_dir={"procrustes": "procrustes"},
-    packages=["procrustes"],
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
     # test_suite="nose.collector",
-    requires=["numpy", "scipy", "sphinx"],
+    install_requires=["numpy", "scipy", "sphinx"],
 )
