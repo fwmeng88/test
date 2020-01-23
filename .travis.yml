@@ -1,8 +1,9 @@
+sudo: false
 language: python
 
 install: pip install tox codecov
 
-matrix:
+jobs:
   include:
     - python: 3.6
       env: TOXENV=py36
@@ -18,4 +19,5 @@ matrix:
       env: TOXENV=black
 
 script: tox
-
+after_success:
+  - codecov
